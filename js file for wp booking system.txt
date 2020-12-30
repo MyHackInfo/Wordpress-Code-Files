@@ -1,0 +1,45 @@
+function wpbs_mark_selection(date, $calendar_instance) {
+        $el = $calendar_instance.find('.wpbs-container .wpbs-date[data-day="' + date.getUTCDate() + '"][data-month="' + (date.getUTCMonth() + 1) + '"][data-year="' + date.getUTCFullYear() + '"]');
+        $el.addClass('wpbs-date-selected');
+        var days = jQuery('.wpbs-date-selected').length;
+
+        // switch condition for day base amount like 2days =$324 ,3days =$399 
+        switch(days){
+            case 1:
+                var days = 162;
+                jQuery('.totalAmount input').attr("value",days);
+                document.getElementById("total_amount").innerHTML=days;
+                break;
+
+            case 2:
+                var days = 324;
+                jQuery('.totalAmount input').attr("value",days);
+                document.getElementById("total_amount").innerHTML=days;
+                break;
+
+            case 3:
+                var days = 399;
+                jQuery('.totalAmount input').attr("value",days);
+                document.getElementById("total_amount").innerHTML=days;
+                break;
+
+            case 4:
+                var days = 474;
+                jQuery('.totalAmount input').attr("value",days);
+                document.getElementById("total_amount").innerHTML=days;
+                break;
+
+            case 5:
+                var days = 549;
+                jQuery('.totalAmount input').attr("value",days);
+                document.getElementById("total_amount").innerHTML=days;
+                break;
+            default:
+                var days = days * 162;
+                jQuery('.totalAmount input').attr("value",days);
+                document.getElementById("total_amount").innerHTML=days;
+                break;
+
+        }
+        
+    }

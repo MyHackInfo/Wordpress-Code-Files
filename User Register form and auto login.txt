@@ -1,0 +1,15 @@
+$userdata = array(
+	'user_login' => $u_username,
+	'user_email' => $u_email,
+	'description' => $u_dob,
+	'user_pass' => $u_psw,
+	'role' => 'customer',			
+               );
+$users = wp_insert_user( $userdata );
+$user_data = get_user_by( 'id', $users ); 
+ if($user_data){
+	wp_set_current_user( $users, $user->user_login );
+	wp_set_auth_cookie( $users );
+	do_action( 'wp_login', $user->user_login, $user );
+	echo "<script>window.location.href='https://cygyny.com/store/' </script>";
+ }

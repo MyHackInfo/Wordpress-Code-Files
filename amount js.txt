@@ -1,0 +1,77 @@
+Date base amout js
+jQuery('#input_9_2').attr('autocomplete', 'off');
+jQuery('#input_9_1').attr('autocomplete', 'off');
+
+var dateVal1;
+var dateVal2;
+var totalAmount;
+
+
+jQuery('#input_9_1').on('change',function(){
+   dateVal1 = jQuery('#input_9_1').val();
+});
+
+jQuery('#input_9_2').on('change',function(){
+  	dateVal2 = jQuery('#input_9_2').val();
+  	var dateFirst = new Date(dateVal1);
+		var dateSecond = new Date(dateVal2);
+  
+  	// time difference 
+		var timeDiff = dateSecond.getTime() - dateFirst.getTime();
+
+		// days difference
+		var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+ 		
+  	//console.log(diffDays);
+    switch(diffDays){
+      case 0:
+      Amount = 162;
+      document.getElementById("input_9_16").value = '$162';
+      break;
+      
+      case 1:
+      totalAmount = 162;
+      document.getElementById("input_9_16").value = '$162';
+      break;
+      
+      case 2:
+      totalAmount = 324;
+      document.getElementById("input_9_16").value = '$324';
+      break;
+
+      case 3:
+      totalAmount = 399;
+      document.getElementById("input_9_16").value = '$399';
+      break;
+
+      case 4:
+      totalAmount = 474;
+      document.getElementById("input_9_16").value = '$474';
+      break;
+
+      case 5:
+      totalAmount= 549;
+      document.getElementById("input_9_16").value = '$549';
+      break;
+      
+      default:
+        totalAmount = diffDays * 162;
+      	document.getElementById("input_9_16").value = "$" + totalAmount;
+  }
+   
+});
+
+
+jQuery('#input_9_16').keyup(function(){
+   console.log('hhh');
+   var $input = jQuery(this).find("input[name=input_16]");
+     jQuery('#input_9_16').val("$" + totalAmount);
+});
+
+
+
+
+
+
+
+

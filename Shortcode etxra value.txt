@@ -1,0 +1,42 @@
+add_shortcode( 'pages_by_category', 'pages_by_category_handler' );
+function pages_by_category_handler( $atts ) {
+$post_type = $atts['post_type'];
+$post_category = $atts['category'];
+}
+
+
+
+add_shortcode( 'pages_by_category', 'pages_by_category_handler' );
+function pages_by_category_handler( $atts ) {
+	$post_type = $atts['post_type'];
+    $post_category = $atts['category'];
+	
+	$args = array(
+		'post_type'=> $post_type,
+		'cat' => $post_category,
+		'order' => 'ASC'
+	);
+	$the_query = new WP_Query( $args );
+    if($the_query->have_posts() ) :
+      while ( $the_query->have_posts() ) :
+          $the_query->the_post();
+          $url = get_the_post_thumbnail_url( get_the_ID(), 'full"' );?>
+			<div class="row-00">
+				<div class="row-col1">
+					<a href="<?php the_permalink(); ?>" class="page-titles"><?php the_title(); ?></a><br>
+					<?php the_excerpt(); ?>
+				</div>
+				<div class="row-col2" style="background-image: url('<?php echo $url?>');">
+					
+				</div>
+				
+			</div><?php
+           
+      endwhile;
+      wp_reset_postdata();
+    else:
+    endif;
+	
+}
+
+[pages_by_category post_type="page" category="4248"]

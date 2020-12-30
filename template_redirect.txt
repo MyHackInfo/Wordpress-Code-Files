@@ -1,0 +1,23 @@
+add_action('template_redirect', 'add_login_check');
+function add_login_check()
+{
+    $userinfo = wp_get_current_user();
+	if(is_user_logged_in()){
+		if( in_array('dc_vendor', $userinfo->roles)  && is_page( [762, 895, 295,904] )){
+			wp_redirect( site_url().'/wp-admin/admin.php?page=wc-admin' );
+		}
+
+		else if( in_array('dc_pending_vendor', $userinfo->roles) && is_page( [762, 895, 295,904] ) ){
+			wp_redirect( site_url().'/new-my-account' );
+		}
+
+		else if(is_page( [762, 895, 295,904, 1641] )){
+				wp_redirect( site_url().'/new-my-account' );
+		}	
+	}else{
+		if(is_page( [2185, 2173, 2115, 2047, 1994, 1939, 1909, 1800, 1788, 1768] )){
+			wp_redirect( site_url().'/new-login' );
+		}
+
+	}
+}

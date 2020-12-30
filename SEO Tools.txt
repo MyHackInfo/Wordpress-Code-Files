@@ -1,0 +1,21 @@
+SEO Tools 
+sslshopper.com  ==> for ssl checker
+
+sitecheck.sucuri.net ==> Malware & Security checks
+mxtoolbox.com & ultratools.com/tools/spamDBLookup == > Blacklist checker
+webpagetest.org / GTMetrix  ==>> site speed checker
+
+seositecheckup.com/tools/css-minification-test  ==> CSS minified?
+iplocation.net ==> server location by ip
+viewdns.info/reverseip/  ckecker all sites on web server
+builtwith.com   ==> what platform is the site built on
+builtwith.com ==> is a cdn is use
+Google / responsinator.com   ==> responsive check
+
+webpagetest.org   ==> mobile page size
+webpagetest.org  ==> image use, image optimisation
+seositecheckup.com/tools/deprecated-html-tags-test   ==> are deprecated html tags being used?
+validator.w3.org  ==> HTMl Validation
+https://www.webaccessibility.com/  ==> Accessibility checks
+
+https://orion.managewp.com

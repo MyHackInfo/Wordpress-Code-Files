@@ -1,0 +1,53 @@
+Css For Forms
+
+gf_left_half   gf_right_half
+
+/* form css*/
+#input_1_2,#input_1_3,#input_1_4,#input_1_1{
+  border-radius: 100px;
+  background-color: transparent;
+  border-color: #5e75c5;
+  color:rgb(53, 56, 69);
+  height:40px;
+}
+#input_1_1{
+  width:100%;
+}
+#input_1_4{
+  border-radius:40px;
+  background-color: transparent;
+  border-color: #5e75c5;
+  height: 80px;
+  color:rgb(53, 56, 69);
+  
+}
+#field_1_2,#field_1_4,#field_1_3{
+  margin-top:0px;
+}
+
+input::-webkit-input-placeholder{
+  color:#5e75c5 !important;
+  padding-left:5px;
+  font-size:15px;
+}
+textarea::-webkit-input-placeholder{
+  color:#5e75c5 !important;
+  padding-top:2px;
+  padding-left:5px;
+  font-size:15px;
+}
+.gform_footer input[type=submit]{
+  color: #fff;
+  border-radius: 100px;
+  padding-left: 60px;
+  padding-right: 60px;
+  box-shadow:none;
+  background-color:#5e75c5;
+  border-color:#5e75c5;
+  padding-top:12px;
+  padding-bottom:12px;
+}
+div.gform_footer.top_label {
+  text-align:left;
+  margin-top:30px;
+}

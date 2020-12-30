@@ -1,0 +1,142 @@
+edit contact form 7 
+
+[text* your-name placeholder "*Name"]
+
+[text text-241 placeholder "*Organization"]
+
+<label><b style="font-size:16px;color:#000"> *Physical Address </b>
+[text text-241 placeholder "*Street Address"]</label>
+
+[text text-241 placeholder "*Address line 2"]
+
+[text text-242 placeholder "*City"]
+[text text-243 placeholder "*State"]
+[text text-244 placeholder "*Postal / Zip Code"]
+[select menu-198 "-*Country-" "&quot;Albania&quot;" "&quot;Austria&quot;" "&quot;Aruba&quot;"]
+
+<label> <b style="font-size:16px;color:#000">*Mailing Address (if different)</b>
+[text text-241 placeholder "*Street Address"]</label>
+
+[text text-241 placeholder "*Address line 2"]
+
+[text text-245 placeholder "*City"]
+[text text-246 placeholder "*State"]
+[text text-247 placeholder "*Postal / Zip Code"]
+[select menu-198 "-*Country-" "&quot;Albania&quot;" "&quot;Austria&quot;" "&quot;Aruba&quot;"]
+
+[number number-218 placeholder "*Primary phone"]
+
+[number number-218 placeholder "*Secondar phone"]
+
+[email* your-email placeholder "*Email"]
+
+[text text-241 placeholder "*Website"]
+
+[textarea textarea-407 placeholder "*Organizational mission"]
+
+[text text-241 placeholder "*Primary social justics interest"]
+[text text-241 placeholder "*Secondary social justics interest"]
+
+[textarea textarea-407 placeholder "*Special skills, services or resources that you offer"]
+
+[text text-241 placeholder "*Is your organization a 501C3?"]
+
+[submit "Submit - Great to meet you and we look forward to working with you."]
+
+
+#cbb574
+
+
+
+#input_1_2,#input_1_3,#input_1_4,#input_1_7,#input_1_9,#input_1_8,#input_2_1{
+  background-color: transparent;
+  color:rgb(53, 56, 69);
+	border: none;
+  border-bottom: 1px solid #000;
+ border-radius: 0px
+}
+#input_1_9{
+  width:100%;
+}
+#input_2_1{
+	width:90%;
+}
+#input_2_1:hover{
+	border:none;
+	border:1px solid #398092; 
+}
+
+#gform_2 .gform_body{
+	float:left;
+	display:inline-block;
+}
+#gform_2 .gform_footer {
+	padding:0px;
+	margin:0px;
+	float:right;
+	width:10%;
+	margin-top: -24px;	
+}
+
+#input_1_2:hover,#input_1_3:hover,#input_1_4:hover,#input_1_7:hover,#input_1_9:hover,#input_1_8:hover{
+	border-bottom:none;
+	border:1px solid rgba(24, 24, 24, 1);
+	
+}
+
+#field_1_2,#field_1_4,#field_1_3,#field_1_7,#field_1_9,#field_2_1{
+  margin-top:0px;
+	height: 53px;
+}
+#field_1_8{
+	margin-top:0px;
+}
+
+#input_1_8{
+	height:100px;
+}
+
+input::-webkit-input-placeholder{
+  color:rgba(0,0,0,0.86) !important;
+  padding-left:5px;
+  font-size:15px;
+}
+#input_2_1::-webkit-input-placeholder{
+	color:rgba(0,0,0,0.86) !important;
+  padding-left:5px;
+  font-size:15px;
+}
+textarea::-webkit-input-placeholder{
+  color:#000 !important;
+  padding-top:2px;
+  padding-left:5px;
+  font-size:15px;
+}
+#gform_submit_button_1{
+  color: #fff;
+	width: 100% !important;
+  padding-left: 60px;
+  padding-right: 60px;
+  box-shadow:none;
+  background-color:rgba(24, 24, 24, 1);
+  border-color:#5e75c5;
+  padding-top:12px;
+  padding-bottom:12px;
+	height:45px;
+}
+#gform_submit_button_2{
+	color: #fff;
+  padding-left: 25px;
+  padding-right: 25px;
+  box-shadow:none;
+  background-color:rgba(24, 24, 24, 1);
+  border-color:#5e75c5;
+  padding-top:12px;
+  padding-bottom:12px;
+	height:45px;
+}
+
+div.gform_footer.top_label {
+  text-align:left;
+  margin-top:15px;
+}

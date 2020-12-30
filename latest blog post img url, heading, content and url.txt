@@ -1,0 +1,72 @@
+// this shortcode for home page latest blog post img url, heading, content and url.
+
+function post_title_data(){
+	ob_start();
+		$recent_posts = wp_get_recent_posts(array(
+        'numberposts' => 1, // Number of recent posts thumbnails to display
+        'post_status' => 'publish' // Show only the published posts
+    	));
+     
+	if(count($recent_posts)) {
+         $post_id = $recent_posts[0]['ID'];
+		 $post_title = get_the_title($post_id);
+		  echo $post_title;
+		 	return ob_get_clean(); 
+		 }	
+		 
+      }
+	
+add_shortcode('get_post_title', 'post_title_data');
+
+function post_img_data(){
+	  ob_start();
+		$recent_posts = wp_get_recent_posts(array(
+        'numberposts' => 1, // Number of recent posts thumbnails to display
+        'post_status' => 'publish' // Show only the published posts
+    	));
+			
+	if(count($recent_posts)) {
+         $post_id = $recent_posts[0]['ID'];
+		 $post_title = get_the_title($post_id);
+		 $featured_img_url = get_the_post_thumbnail_url($post_id,'full');
+		 echo $featured_img_url;
+		 	return ob_get_clean(); 
+		 }	 
+}
+	
+add_shortcode('get_post_img', 'post_img_data');
+
+function post_cont_data(){
+	 ob_start();
+		$recent_posts = wp_get_recent_posts(array(
+        'numberposts' => 1, // Number of recent posts thumbnails to display
+        'post_status' => 'publish' // Show only the published posts
+    	));
+			
+	if(count($recent_posts)) {
+         $post_id = $recent_posts[0]['ID'];
+		 $post_content_data = get_the_excerpt($post_id);
+		 echo $post_content_data;
+			return ob_get_clean(); 
+		 }
+      }
+	
+add_shortcode('get_post_cont', 'post_cont_data');
+
+
+function post_link_data(){
+	ob_start();
+		$recent_posts = wp_get_recent_posts(array(
+        'numberposts' => 1, // Number of recent posts thumbnails to display
+        'post_status' => 'publish' // Show only the published posts
+    	));
+			
+	if(count($recent_posts)) {
+         $post_id = $recent_posts[0]['ID'];
+		 $post_permalink = get_the_permalink($post_id); 
+		 echo $post_permalink;
+			return ob_get_clean(); 
+		 }
+      }
+	
+add_shortcode('get_post_link', 'post_link_data');

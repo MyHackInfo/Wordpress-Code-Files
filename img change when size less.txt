@@ -1,0 +1,15 @@
+http://prpwebs.in/photoimpact/wp-content/uploads/2019/07/contact_img.png
+
+
+.size_crop img{
+  	
+width: 1890px;
+    
+height: 845px;
+   	
+text-align:center;
+   	
+left:-40px;
+    object-fit:cover;
+   
+  }

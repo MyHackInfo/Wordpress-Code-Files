@@ -1,0 +1,26 @@
+Add Shortcode
+
+add this code in includes/class-pluginname-loader.php
+
+protected $shortcodes;
+$this->shortcodes = array();
+
+
+public function add_shortcode( $tag, $component, $callback, $priority = 10, $accepted_args = 2 ) {
+            $this->shortcodes = $this->add( $this->shortcodes, $tag, $component, $callback, $priority, $accepted_args );
+        }
+
+foreach ( $this->shortcodes as $hook ) {
+            add_shortcode(  $hook['hook'], array( $hook['component'], $hook['callback'] ));
+        }
+
+
+add this code in include/class-pluginname.php
+$this->loader->add_shortcode("shortcode_name", $plugin_admin,"shortcode_funcation");
+
+
+add function of shorcode in admin and public 
+public function shortcode_funcation($atts, $content = "")
+{
+
+}

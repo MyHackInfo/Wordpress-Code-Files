@@ -1,0 +1,27 @@
+	if(isset( $_POST['submit'] )){
+  		$u_id = get_current_user_id();
+  		
+  		if(empty($_POST['psword'])){
+  			$user_info = array(
+  				'ID' => $u_id,
+  				'first_name' =>  $_POST['fname'],
+  				'last_name' => $_POST['lname'],
+  				'user_description' => $_POST['biography']
+  			);
+  		}else{
+  			$user_info = array(
+  				'ID' => $u_id,
+  				'first_name' =>  $_POST['fname'],
+  				'last_name' => $_POST['lname'],
+  				'user_pass' => $_POST['psword'],
+  				'user_description' => $_POST['biography']
+  			);
+  		}
+
+  		if(wp_update_user($user_info)){
+  			echo "<div style='color: #fff;padding: 10px;background: #19BBE1;margin-bottom: 15px;'>Update Done</div>";
+  		}else{
+  			echo "<div style='color: #fff;padding: 10px;background: #19BBE1;margin-bottom: 15px;'>Update Not Done</div>";
+  		}
+  		
+  	}

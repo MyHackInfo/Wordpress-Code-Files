@@ -1,0 +1,11 @@
+jQuery(".popmake-822").on('click',function(){
+var geturl =jQuery(this).attr('href');
+jQuery(".wpcf7-hidden").val(geturl);
+});
+jQuery(".cart .single_add_to_cart_button").addClass("single_add_to_cart_button popmake-822");
+
+jQuery(".cart").on('click',function(){
+var geturl =jQuery(this).attr('action');
+console.log(geturl);
+jQuery(".wpcf7-hidden").val(geturl);
+});

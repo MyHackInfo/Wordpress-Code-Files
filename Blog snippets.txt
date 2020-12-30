@@ -1,0 +1,30 @@
+<script id="snippet-json-ld-page-post" type="application/ld+json">{
+    "@context": "http://schema.org/",
+    "@type": "Blog",
+    "headline": "Read Our Blog About Tree Care",
+    "alternativeHeadline": "Read Our Blog About Tree Care | Panorama Tree Care",
+    "description": "The Panorama Tree Care blog is packed with quality information about tree disease, diagnosis and treatment, and more!",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://www.panoramatreeservice.com/wp-content/uploads/2020/04/image-24.jpg",
+        "height": null,
+        "width": null
+    },
+    "datePublished": "2018-02-10 16:42:05",
+    "dateModified": "2020-09-24 09:24:41",
+    "author": {
+        "@type": "Person",
+        "name": "admin"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "panoramatreeservice",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.panoramatreeservice.com/wp-content/uploads/2020/08/FAV.jpg",
+            "height": "350",
+            "width": "581"
+        }
+    },
+    "mainEntityOfPage": "Read Our Blog About Tree Care"
+}</script>

@@ -1,0 +1,61 @@
+function date_four_method(){
+	$d4 = get_option('fourth_d');
+	$next_date= date('M d', strtotime($d4. ' + 18 days'));		 
+	echo date('M d', strtotime($d4));
+	echo " -".$next_date;
+}
+
+
+
+
+..................................
+
+if(isset($_POST['submit'])){
+	$first_date = $_POST['first_date'];
+	$second_date = $_POST['second_date'];
+	$third_date = $_POST['third_date'];
+	$fourth_date = $_POST['fourth_date'];
+	
+	update_option( 'first_d', $first_date);
+	update_option( 'second_d', $second_date);
+	update_option( 'third_d', $third_date);
+	update_option( 'fourth_d', $fourth_date);
+
+}
+
+?>
+<style type="text/css">
+	    .date-input1{
+	    	padding-right: 60px;
+	    }
+	    .date-input2{
+	    	padding-right: 38px;
+	    }
+	    .date-input3{
+	    	padding-right: 54px;
+	    }
+	    .date-input4{
+	    	padding-right: 44px;
+	    }
+</style>
+<div class="wrap">
+	<h2>NEWSTART Automatic Date</h2>
+	<div style="padding-top: 60px">
+	<form action="#" method="post">
+  		<label for="first_date" class="date-input1">First Date:</label>
+		<input type="date" name="first_date"><br><br>
+
+		<label for="second_date" class="date-input2">Second Date:</label>
+		<input type="date" name="second_date"><br><br>
+
+		<label for="third_date" class="date-input3">Third Date:</label>
+		<input type="date" name="third_date"><br><br>
+
+		<label for="fourth_date" class="date-input4">Fourth Date:</label>
+		<input type="date" name="fourth_date"><br><br>
+		
+		<input type="submit" name="submit">
+
+	</form>
+</div>
+</div>

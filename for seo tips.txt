@@ -1,0 +1,7 @@
+For SEO 
+
+use webp instead jpeg and png conver == https://squoosh.app/
+https://caniuse.com/
+https://imageoptim.com/
+http://www.jpegmini.com/
+https://developers.google.com/speed/pagespeed/insights/

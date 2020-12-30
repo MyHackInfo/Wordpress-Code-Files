@@ -1,0 +1,139 @@
+##Includes main file 
+private function define_admin_hooks() {
+	$this->loader->add_action( 'admin_menu', $plugin_admin, 'function_name' );
+}
+
+private function define_public_hooks() {
+	//shortcode for filters
+	$this->loader->add_shortcode( "shortcode_name", $plugin_public, "shortcode_function");
+
+	// ajax file 
+	$this->loader->add_action('wp_ajax_img_style_data' , $plugin_admin , 'img_style_data');
+}
+
+
+## Admin Main file
+public function post_filter(){
+	add_menu_page("Menu_txt","Page_txt","manage_options","menu-slug",array($this,"menu_functions"),"
+	dashicons-code-standards",8);
+	add_submenu_page("parent_slug","Sub Menu","Sub Menu","manage_options","sub-menu-slug",array($this,"sub_function"));
+}
+
+public function get_filter_input(){
+	include_once 'partials/prpwebs_ravenna-admin-display.php';		
+}
+public function menu_functions(){
+	include_once 'partials/prpwebs_ravenna-admin-display.php';		
+}
+
+## Public 
+//shortcode method for Produce filters
+public function shortcode_function($atts, $content = ""){
+	include_once 'partials/prpwebs_ravenna-public-display_filters.php';
+}
+
+## Shortcode code on loader file 
+## Add Shortcode
+
+add this code in includes/class-pluginname-loader.php
+
+protected $shortcodes;
+$this->shortcodes = array();
+
+
+public function add_shortcode( $tag, $component, $callback, $priority = 10, $accepted_args = 2 ) {
+            $this->shortcodes = $this->add( $this->shortcodes, $tag, $component, $callback, $priority, $accepted_args );
+        }
+
+foreach ( $this->shortcodes as $hook ) {
+            add_shortcode(  $hook['hook'], array( $hook['component'], $hook['callback'] ));
+        }
+
+
+add this code in include/class-pluginname.php
+$this->loader->add_shortcode("shortcode_name", $plugin_admin,"shortcode_funcation");
+
+
+add function of shorcode in admin and public 
+public function shortcode_funcation($atts, $content = "")
+{
+
+}
+
+## Code for Table
+	Activator page
+
+global $wpdb;
+		// table for visitor counter value
+		$table_name = 'visitor_counter';
+		if ( ! empty( $wpdb->charset ) ) {
+		$charset_collate = "DEFAULT CHARACTER SET $wpdb->charset";
+		}
+		if ( ! empty( $wpdb->collate ) ) {
+		$charset_collate .= " COLLATE $wpdb->collate";
+		}
+		// Add one library admin function for next function
+		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+
+		// Data table
+		$sql = "CREATE TABLE $table_name (
+		  
+		  id mediumint(9) NOT NULL AUTO_INCREMENT,
+		  pageName varchar(100) NOT NULL,
+		  visitor_number varchar(100) NOT NULL,
+		  PRIMARY KEY  (id)
+		  
+		  ) $charset_collate;";
+		dbDelta( $sql );
+
+## Code for table delete
+	Deactivator page 
+global $wpdb;
+		
+		// remove table form database of visitor counter value
+		$sql = "DROP TABLE IF EXISTS visitor_counter";
+		$wpdb->query($sql);
+		delete_option("my_plugin_db_version");
+
+
+## Get value from data base
+global $wpdb;
+
+$img_style = $wpdb->get_results("SELECT * FROM table_name", ARRAY_A);
+$images_folder =$img_style[0]['img_style']; 
+
+## add code on include main file admin hooks 
+## using ajax 
+$this->loader->add_action('wp_ajax_img_style_data' , $plugin_admin , 'img_style_data');
+
+
+## Form submit data update and insert
+
+// insert and update image style type in database using ajax.
+	public function img_style_data(){
+
+		$imgName = $_POST['imgName'];
+		$img_style = $_POST['img_style'];
+
+		global $wpdb;
+	    $img_style_value = $wpdb->get_results("SELECT img_style FROM visitor_counter_img ", ARRAY_A);
+		
+		if(empty($img_style_value)){
+					
+					 $data = array(
+	                    'imgName'=> $imgName,
+	                    'img_style'=>$img_style
+	                );
+	                $wpdb->insert('visitor_counter_img',$data);
+	        }
+	    else{
+ 
+	            $data = array(
+	                'imgName'=> $img_style,
+	                'img_style'=>$img_style
+	                );
+	            $wpdb->update('visitor_counter_img',$data,array('imgName'=>$img_style_value[0]['img_style']));
+
+	        }
+
+	    }

@@ -1,0 +1,43 @@
+wordpress zip upload in http_public folder
+
+sql database file upload in database MySql@
+
+then create phpmyadmin database user account and permision
+
+change home and url in database and config file in http_public folder
+server user name and password are which you create on server MYsql file
+
+and login username and pass are which you create for wordpress login
+
+
+/public_html/prptests.com/ranq
+
+
+
+1=>Upload zip file of wordpress website in cpanel >> public_html folder 
+unzip here.
+
+2=> Create database file in MySQL Databases application.
+
+3=>upload database  .sql file in phpMyAdmin import here.
+
+3=> Add New User  on MySQL Users.
+username
+password 
+4=>Add user to database and give to permision of all task .
+
+5=> go database file in phpmyadmin and edit in wp_options
+ siteurl
+ home url (/public_html/prptests.com/sitename
+
+6=> go to public_html/sitename folder
+edit 
+wp_config.php file 
+.define database name for wordpress site
+Mysql database username, password
+
+
+
+
+
+

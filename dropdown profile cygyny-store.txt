@@ -1,0 +1,46 @@
+<div class="main-box">
+	<div class="sub-box">
+    	<div style="text-align:center">
+        	<i aria-hidden="true" class="fas fa-user-circle" style="font-size:2.5em;"></i>
+            <p><b> Test</b></p>
+        </div>
+        
+        <div>
+        	<ul style="list-style-type:none" class="u-l">
+            	<li><a href="#">CYGYNY Points</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="../../cygyny-store/login/">User Login</a></li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</div>
+
+<style>
+.main-box{
+	position: absolute;
+	z-index: 999;
+	width:200px;
+    height:280px;
+    padding:10px;
+    background-color:#fff;
+    border: 2px solid #eeee;
+}
+.sub-box{
+
+}
+.u-l{
+padding-left:0px;
+margin-left: 0px;
+}
+.u-l li{
+margin:15px 0;
+}
+.u-l a{
+text-decoration:none;
+padding: 10px 15px;
+margin:0;
+color: #000000;
+}
+</style>

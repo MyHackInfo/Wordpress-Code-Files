@@ -1,0 +1,26 @@
+.x-recent-posts .x-recent-posts-img:after{
+  background-color:transparent !important;
+}
+
+
+
+.x-recent-posts .x-recent-posts-img:before{
+  color:transparent !important;
+}
+
+
+.entry-wrap .h-recent-posts{
+  font-size:25px !important;
+}
+
+
+
+.entry-wrap .h-recent-posts:hover{
+  color:#000 !important;
+}
+
+
+
+.x-recent-posts a:hover .h-recent-posts{
+  color:#000 !important;
+}

@@ -1,0 +1,58 @@
+Put code on form tag
+onsubmit="return errorCheck();"
+
+...................................
+create validation on js file 
+
+function errorCheck(){
+//sleep input
+
+	if (document.querySelector('input[name="member_score_sleep"]:checked') === null) {
+		document.getElementById("error-sleep").innerHTML = "Sleep is Required";
+		return false;
+	}
+	
+	//exercise field
+	else if (document.querySelector('input[name="member_score_exercise"]:checked') === null) {
+		document.getElementById("error-exercise").innerHTML = "Exercise is Required";
+		return false;
+	}
+	
+	//smoking field
+	else if (document.querySelector('input[name="member_score_smoking"]:checked') === null) {
+		document.getElementById("error-smoking").innerHTML = "Smoking is Required";
+		return false;
+	}
+
+	//alchol field
+	else if (document.querySelector('input[name="member_score_alcohol"]:checked') === null) {
+		document.getElementById("error-alcohol").innerHTML = "alcohol is Required";
+		return false;
+	}
+	
+	//diet field
+	else if (document.querySelector('input[name="member_score_diet"]:checked') === null) {
+		document.getElementById("error-diet").innerHTML = "Diet is Required";
+		return false;
+	}
+
+	// member_score_nutrition
+
+	else if (document.querySelector('input[name="member_score_nutrition"]:checked') === null) {
+		document.getElementById("error-nutrition").innerHTML = "Nutrition is Required";
+		return false;
+	}
+	
+	//member_score_emotional
+
+	else if (document.querySelector('input[name="member_score_emotional"]:checked') === null) {
+		document.getElementById("error-emotional").innerHTML = "Emotional is Required";
+		return false;
+	}
+	else{
+		return true;
+	}
+	
+
+	
+}

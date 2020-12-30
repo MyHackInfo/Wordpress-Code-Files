@@ -1,0 +1,13 @@
+Add shortcode on boiler plate pluging
+
+in includes/class-partial.php file
+
+1-in define_plublic_hooks()
+
+$this->loader->add_shortcode('date_four', $plugin_public, 'functions_name');
+
+
+2-go Plublic site and class-partial-plublic.php
+
+plublic function functions_name(){
+}

@@ -1,0 +1,25 @@
+	
+jQuery('document').ready(function(){
+	
+	jQuery('.catlabelcol').on('click', function(){
+		var catid = jQuery(this).attr('catid');
+		document.location.href = 'product-category/'+catid;
+	});
+
+	jQuery('#profile-detail').on('click', function(){
+		jQuery("#profile-pop-up").toggle();
+	});
+
+	var urlpath = window.location.pathname.split('/');
+	
+	if(urlpath[2]=='join'){
+		jQuery('.woocommerce-LostPassword').append('<a href="./vendor-registration-2/">- Register Now</a>');
+	}
+	if(urlpath[2]=='login'){
+		jQuery('.woocommerce-LostPassword').append('<a href="./user-registration/">- Register Now</a>');
+	}
+
+
+	
+});
+

@@ -1,0 +1,12 @@
+add_action( 'init', 'user_role_permision');
+function user_role_permision() {
+$user_meta=get_userdata(get_current_user_id());
+$user_roles=$user_meta->roles;
+$role = get_role('dc_vendor');
+//$role->remove_cap("bulk_import");
+$role->add_cap("upload_files");
+//$role->add_cap("manage_woocommerce");
+
+$admin_role_set = get_role( 'dc_vendor' )->capabilities;
+//var_dump($admin_role_set);
+}

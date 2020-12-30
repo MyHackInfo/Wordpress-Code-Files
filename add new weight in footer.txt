@@ -1,0 +1,62 @@
+// add in function.php
+#endregion
+add_action( 'widgets_init', 'dns_widgets_init' );
+
+/*prpwebs custom code*/
+function dns_widgets_init() {
+  register_sidebar(
+    array(
+      'name'          => 'Blog Page Sidebar',
+      'id'            => 'blog-sidebar',
+      'description'   => 'Widget that appears in the blog page',
+      'before_widget' => '<div class="prp_sidebar">',
+      'after_widget'  => '</div>',
+      'before_title'  => '<h3>',
+      'after_title'   => '</h3>',
+  )
+  );
+}
+
+
+// add in widgets.php
+<?php echo dynamic_sidebar( 'blog-sidebar' );?>
+
+
+
+
+alchemyleads 
+// add in function.php
+#endregion
+add_action( 'widgets_init', 'dns_widgets_init' );
+
+/*prpwebs custom code*/
+function dns_widgets_init() {
+  register_sidebar(
+    array(
+      'name'          => 'Blog Page Sidebar',
+      'id'            => 'blog-sidebar',
+      'description'   => 'Widget that appears in the blog page',
+      'before_widget' => '<div class="prp_sidebar">',
+      'after_widget'  => '</div>',
+      'before_title'  => '<h3>',
+      'after_title'   => '</h3>',
+  )
+  );
+}
+// add second widgets
+add_action( 'widgets_init', 'dns_widgets_init2' );
+
+/*prpwebs custom code*/
+function dns_widgets_init2() {
+  register_sidebar(
+    array(
+      'name'          => 'Blog Page Sidebar2',
+      'id'            => 'blog-sidebar2',
+      'description'   => 'Widget that appears in the blog page',
+      'before_widget' => '<div class="prp_sidebar2">',
+      'after_widget'  => '</div>',
+      'before_title'  => '<h3>',
+      'after_title'   => '</h3>',
+  )
+  );
+}

@@ -1,0 +1,25 @@
+.wpcf7 textarea{
+    height:120px;
+  }
+input[type="text"],input[type="email"],.wpcf7 textarea{background-color: #f5f5f5;
+border:none;
+  border-radius:0px;
+}
+.wpcf7-submit{
+color: #000001;
+background-color: transparent;
+border: 2px solid #000001;
+  box-shadow:none;
+ padding: 10px 38px;
+  border-radius:0px;
+}
+
+@media(min-width:1024px){
+  input[type="text"],input[type="email"]{
+width:49%!important;
+}
+  input[type="email"]{
+    float:right;
+  }
+  
+}

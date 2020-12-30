@@ -1,0 +1,142 @@
+single blog page
+
+
+
+<header class="entry-header">
+    <br>
+  <h1 class="entry-title" style="margin-bottom:10px;"><?php the_title(); ?></h1>
+  <?php x_integrity_entry_meta(); ?>
+  <?php echo get_the_content(); ?>
+</header>
+
+
+
+main blog page
+
+<?php 
+/*
+	Template Name: New Blog
+*/
+ get_header(); 
+
+    $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+    $args = array(
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'post_status' => 'publish',
+        'posts_per_page' => 9,
+        'paged' => $paged
+    );
+    $the_query = new WP_Query($args);
+?>
+    
+    <!-- <div class="wrapper">
+        <div class="container prp_bread_crumbs">
+            <a href="/"> <b>Home</b> </a> <span> ? </span> 
+            <span> Blog </span>
+        </div>
+    </div> -->
+
+    <?php if( $the_query->have_posts() ) : ?> 
+
+    <!-- continer -->
+	        <?php while( $the_query->have_posts() ) : 
+                $the_query->the_post(); 
+                           ?>
+               <div class="blog-page-container">
+                <div class="blog-item resp-blog-item" style="margin-top:40px;width:30%;display:inline-block;float:left;">
+	                <div class="prpblogthumbnail">
+	                    <?php
+	                        if ( has_post_thumbnail() ) {
+	                            the_post_thumbnail('', array('class' => 'img-responsive'));
+	                        }
+	                    ?>
+	                </div>
+
+	                <div class="prppost_excerpt">
+	                    <h2 class="blog-page-titles"><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></h2>
+	                    <?php the_excerpt(); ?>
+	                    <p><a href="<?php the_permalink(); ?>">
+	                    </a></p>
+	                </div>
+	            </div>
+	            </div>
+	        <?php endwhile; ?>
+	   
+    <!-- /.cemetries -->
+
+    <!-- options -->
+    <div class="wrapper prppagefooter blog-page-container" style="clear: both;">
+
+        <!-- pagination -->
+        <ul class="prppagination">
+            <!-- <li><?php echo get_next_posts_link( '>>', $the_query->max_num_pages ); ?></li> -->
+            <li>
+            	<?php 
+		        	$total_pages = $the_query->max_num_pages;
+				    if ($total_pages > 1){
+				        $current_page = max(1, get_query_var('paged'));
+				 
+				        echo paginate_links(array(
+				            'base' => get_pagenum_link(1) . '%_%',
+				            'format' => '/page/%#%',
+				            'current' => $current_page,
+				            'total' => $total_pages,
+				        ));
+				    }
+        		?>
+            </li>
+            <!-- <li>
+            	<?php echo get_previous_posts_link( '<<' ); ?>
+            </li> -->
+        </ul>
+        	
+    </div>
+    <!-- /.options -->  
+
+    <?php wp_reset_postdata(); ?>
+
+    <?php else:  ?>
+
+    <div class="wrapper">
+        <div class="container prp_bread_crumbs">
+            <a href="/"> <b>Home</b> </a> <span> ? </span> 
+            <span> Blog </span>
+        </div>
+    </div>
+    <div class="wrapper" style="padding:20px;">
+        <div class="container">
+            <h2><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></h2  >
+        </div>
+    </div>
+
+    <?php endif; ?>
+
+<?php get_footer(); ?>
+
+<style>
+.blog-page-container{
+    width:auto;
+    margin-left:10%;
+    margin-right:10%;
+}
+.blog-page-titles{
+    font-size:1.8em;
+}
+.resp-blog-item{
+    border:2px solid #00000017;
+    padding:8px;
+    margin:10px;
+}
+@media(max-width:768px){
+    .resp-blog-item{
+        width:100% !important;
+    }
+}
+    
+</style>
+
+
+
+code for 20 words title
+<?php echo mb_strimwidth(get_the_title(), 0, 20, '...'); ?>

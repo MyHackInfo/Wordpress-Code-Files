@@ -1,0 +1,9 @@
+<div class="fixed-btns">
+<a class="fixed-btn w-inline-block" href="tel:5615002020" title="561.500.2020"><div>561.500.2020</div></a>
+<a class="fb4 fixed-btn w-inline-block" href="#" target="_blank" title="locations"><div>Locations</div></a>
+<a class="fb2 fixed-btn w-inline-block" href="#" title="Patient Portal"><div>Patient Portal</div></a>
+<a class="fb3 fixed-btn w-inline-block" href="#" title="Request an Appointment"><div>Request an Appointment</div></a>
+
+
+<div class="fb5 fixed-btn"><a class="fixed-soc w-inline-block" href="https://www.facebook.com/MinnesotaEyeConsultants" title="Facebook" target="_blank"><img class=" lazyloaded" data-src="https://www.mneye.com/wp-content/themes/glacial/images/fb-ico.svg" alt="Facebook Icon" src="https://www.mneye.com/wp-content/themes/glacial/images/fb-ico.svg"></a><a class="fixed-soc w-inline-block" href="https://twitter.com/MinnesotaEye" title="Twitter" target="_blank"><img class=" lazyloaded" data-src="https://www.mneye.com/wp-content/themes/glacial/images/tw-ico.svg" alt="Twitter Icon" src="https://www.mneye.com/wp-content/themes/glacial/images/tw-ico.svg"></a><a class="fixed-soc w-inline-block" href="https://www.youtube.com/user/MinnesotaEye" title="YouTube" target="_blank"><img class=" lazyloaded" data-src="https://www.mneye.com/wp-content/themes/glacial/images/yb-ico.svg" alt="YouTube Icon" src="https://www.mneye.com/wp-content/themes/glacial/images/yb-ico.svg"></a><a class="fixed-soc w-inline-block" href="https://www.mneye.com/blog/" title="Blog"><img class=" lazyloaded" data-src="https://www.mneye.com/wp-content/themes/glacial/images/rss-ico.svg" alt="RSS Icon" src="https://www.mneye.com/wp-content/themes/glacial/images/rss-ico.svg"></a></div>
+</div>

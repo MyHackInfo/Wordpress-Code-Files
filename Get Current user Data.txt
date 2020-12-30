@@ -1,0 +1,15 @@
+// user name
+function get_user_name() {
+	global $current_user;
+  	wp_get_current_user() ;
+  	return $current_user->user_login;
+}
+
+add_shortcode( 'current_user', 'get_user_name' );
+
+value you get:
+ID
+user_login
+user_nicename
+user_email
+user_registered

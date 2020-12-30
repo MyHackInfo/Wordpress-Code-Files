@@ -1,0 +1,7 @@
+<a href="">[x_icon type="facebook"]</a> &nbsp;
+<a href="">[x_icon type="twitter"]</a> &nbsp;
+<a href="">[x_icon type="instagram"]</a> &nbsp;
+<a href="">[x_icon type="pinterest"]</a> &nbsp;
+
+
+<a href="https://www.facebook.com/KandDNorth/">[x_icon type="facebook" style="rgb(199, 135, 91);font-size:30px"]</a> &nbsp;<a href="https://www.instagram.com/kanddnorth/">[x_icon type="instagram" style="rgb(199, 135, 91);font-size:30px"]</a> &nbsp;<a href="https://in.pinterest.com/karlanddimarconorth/">[x_icon type="pinterest" style="rgb(199, 135, 91);font-size:30px"]</a> &nbsp;

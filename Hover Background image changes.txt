@@ -1,0 +1,5 @@
+$('#tag1').hover(function() {
+  $(.home-background .elementor-element-populated).attr('background-image', 'http://prptests.com/photoimpactimaging/wp-content/uploads/2020/06/Page6_web.jpg');
+}, function() {
+  $(.home-background .elementor-element-populated).attr('background-image', 'http://prptests.com/photoimpactimaging/wp-content/uploads/2020/06/THE_HOLLYWOOD_SIGN.jpg');
+});
